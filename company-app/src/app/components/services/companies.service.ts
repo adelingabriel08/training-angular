@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {CompanyModel} from '../../Models/company.model';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class CompaniesService {
       description: 'description2'
     },
     {
-      id:3,
+      id: 3,
       name: 'Name3',
       description: 'description3'
     },
@@ -29,10 +29,20 @@ export class CompaniesService {
     },
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   getCompanies(): CompanyModel[] {
     return this.companies;
+  }
+
+  getCompany(id: number): CompanyModel {
+    for (let i = 0; i < this.companies.length; i++) {
+      if (this.companies[i].id === id) {
+        return this.companies[i];
+      }
+    }
+    // return this.companies.find(company => company.id);
   }
 
 }
