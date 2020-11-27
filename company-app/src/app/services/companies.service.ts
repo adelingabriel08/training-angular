@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CompanyModel} from '../../Models/company.model';
+import {CompanyModel} from '../Models/company.model';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +38,7 @@ export class CompaniesService {
 
   getCompany(id: number): CompanyModel {
     for (let i = 0; i < this.companies.length; i++) {
-      if (this.companies[i].id === id) {
+      if (this.companies[i].id == id) {
         return this.companies[i];
       }
     }
